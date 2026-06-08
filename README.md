@@ -6,3 +6,8 @@
 - Create BrowserRouter > Routes > Route=/Body > RouteChildren
 - Create an Outlet in your Body component
 - Create a Footer 
+- Create login  page
+- Install axios
+- CORS - install cors in backend => add middleware to with configurations: orgin, credentials: true
+- Whenever you'ar making API call so pass axios=>{withCredentials: true }
+- Install Redux Toolkit
