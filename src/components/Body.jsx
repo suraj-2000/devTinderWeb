@@ -1,12 +1,41 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
+import axios from "axios";
+import { BASE_URL } from "../utils/constants";
+import { useDispatch, useSelector } from "react-redux";
+import { addUser } from "../utils/userSlice";
+import { useEffect } from "react";
 const Body = ()=> {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const userData = useSelector(state => state.user);
+  const fetchUser = async () => {
+    try {
+      if(!userData) { // Don't make API call more than once if user exist.
+        const res = await axios.get(BASE_URL+"/profile/view",{withCredentials:true});
+        dispatch(addUser(res.data));
+      }
+    } catch(err) {
+      if (err.response?.status === 401) {
+        return navigate("/login");
+      }
+      console.error(err);
+    }
+   }
+
+   useEffect(()=> {
+    fetchUser();
+   }, []);
     return (
     <>
-      <NavBar/>
-      <Outlet/>
-      <Footer/>
+      <div className="min-h-screen flex flex-col">
+        <NavBar />
+        <main className="flex-grow">
+          <Outlet />
+        </main>
+        <Footer />
+      </div>
     </>)
 
 }

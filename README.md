@@ -11,3 +11,8 @@
 - CORS - install cors in backend => add middleware to with configurations: orgin, credentials: true
 - Whenever you'ar making API call so pass axios=>{withCredentials: true }
 - Install Redux Toolkit
+- Config store
+- You should not be access to other page withotu login
+- If token is not present redirect to login page
+- Logout
+- Profile
