@@ -1,6 +1,5 @@
 const UserCard = ({ user }) => {
-  console.log("url" + user.photoUrl);
-
+  
   const { firstName, lastName, age, gender, photoUrl, about } = user;
 
   return (
