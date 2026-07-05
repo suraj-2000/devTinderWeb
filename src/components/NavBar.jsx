@@ -19,6 +19,7 @@ const NavBar = () => {
 
 
     }
+    const guestUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzt9giWjwNCackreb_tWA5drICRqkjo5ggAiSJ4ToZ1A&s"
     return (
     <>
     <div className="navbar bg-base-300 shadow-sm">
@@ -29,6 +30,12 @@ const NavBar = () => {
         {user && <p className="font-medium self-center">Welcome, {user.firstName} </p> }
         <div className="dropdown dropdown-end mx-5">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+            {!user && (
+            <div className="w-10 rounded-full">
+              <img
+                alt="User"
+                src={guestUrl} />
+            </div> )}
            {user && (
             <div className="w-10 rounded-full">
               <img
