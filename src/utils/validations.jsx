@@ -1,6 +1,6 @@
 import validator from "validator";
 
-export const userLoginValidation = (emailId, password) => {
+export const userLoginValidation = (firstName, lastName,emailId, password, isLogin) => {
   const errors = {};
 
   if (!emailId.trim()) {
@@ -11,7 +11,18 @@ export const userLoginValidation = (emailId, password) => {
 
   if (!password.trim()) {
     errors.password = "Password is required";
-  }
+  } else if(!validator.isStrongPassword(password)) {
+        errors.password = "Please enter strong password.";
+    }
+    
+  if(!isLogin) {
+        if (!firstName.trim()) {
+            errors.firstName = "First name is required";
+        }
+        if (!lastName.trim()) {
+            errors.lastName = "Last name is required";
+        }
+    }
 
   return errors;
 };
