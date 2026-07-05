@@ -40,7 +40,7 @@ const NavBar = () => {
             <div className="w-10 rounded-full">
               <img
                 alt="User"
-                src={user.photoUrl} />
+                src={user.photoUrl || guestUrl} />
             </div> )}
           </div>
           <ul
