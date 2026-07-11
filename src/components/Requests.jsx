@@ -37,7 +37,7 @@ const Requests = () => {
 }));
     return (
         <>
-        <div className="max-w-4xl mx-auto my-8">
+        <div className="max-w-4xl mx-auto my-8 px-4">
             <h1 className="text-xl font-bold text-center mb-8">
                 Requests
             </h1>
@@ -51,9 +51,9 @@ const Requests = () => {
                 return (
                     <div
                     key={request._id}
-                    className="card card-side bg-base-300 shadow-md mb-6 mx-auto max-w-2xl"
+                    className="card card-side bg-base-300 shadow-md mb-6 w-full max-w-2xl mx-auto"
                     >
-                    <figure className="p-4">
+                    <figure className="p-6">
                         <img
                         src={request.photoUrl}
                         alt="user"
@@ -61,7 +61,7 @@ const Requests = () => {
                         />
                     </figure>
 
-                    <div className="card-body">
+                    <div className="card-body py-6">
                         <h2 className="card-title">
                         {request.firstName + " " + request.lastName}
                         </h2>
@@ -69,7 +69,7 @@ const Requests = () => {
                         {request.age && <p>Age: {request.age}</p>}
                         {request.gender && <p>{request.gender}</p>}
                     </div>
-                    <div className="card-actions justify-center gap-4 mt-10 mx-2">
+                    <div className="card-actions items-center justify-center gap-4 my-auto mx-4">
                     <button className="btn btn-primary" onClick={()=>reviewRequest("rejected",request.requestId)}>Reject</button>
                     <button className="btn btn-secondary" onClick={()=>reviewRequest("accepted", request.requestId)}>Accept</button>
                     </div>

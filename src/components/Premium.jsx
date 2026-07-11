@@ -84,10 +84,10 @@ const Premium = () => {
         </p>
       </div>
 
-      <div className="flex flex-col md:flex-row justify-center gap-8 p-8">
+      <div className="flex flex-col md:flex-row justify-center gap-8 p-8 px-4">
 
         {/* Silver Membership */}
-        <div className="card w-96 bg-base-300 shadow-2xl border border-base-content/10">
+        <div className="card w-96 bg-base-300 max-w-96 shadow-2xl border border-base-content/10">
           <div className="card-body">
             <span className="badge badge-primary">
               Silver Membership
@@ -115,7 +115,7 @@ const Premium = () => {
 
 
         {/* Gold Membership */}
-        <div className="card w-96 bg-base-300 shadow-2xl border border-base-content/10">
+        <div className="card w-96 bg-base-300 max-w-96 shadow-2xl border border-base-content/10">
           <div className="card-body">
             <span className="badge badge-secondary">
               Most Popular

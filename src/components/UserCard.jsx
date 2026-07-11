@@ -22,7 +22,7 @@ const UserCard = ({ user }) => {
 
   return (
     <div className="flex justify-center">
-      <div className="card bg-base-300 w-[500px] h-[549px] shadow-2xl border border-base-content/10 my-1">
+      <div className="card bg-base-300 w-full max-w-[450px] h-[550px] shadow-2xl border border-base-content/10">
         <figure className="pt-8">
           <img
             className="w-52 h-52 rounded-full object-cover border-4 border-base-100 shadow-lg"

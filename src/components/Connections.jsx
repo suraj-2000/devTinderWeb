@@ -22,7 +22,7 @@ const Connections = () => {
     },[])
     return (
         <>
-        <div className="max-w-4xl mx-auto my-8">
+        <div className="w-full max-w-4xl mx-auto my-8 px-4">
             <h1 className="text-xl font-bold text-center mb-8">
                 Connections
             </h1>
@@ -35,10 +35,10 @@ const Connections = () => {
                 connectionList.map((connection) => {
                 return (
                     <div
-                    key={connection._id}
-                    className="card card-side bg-base-300 shadow-md mb-6 mx-4 max-w-2xl"
+                        key={connection._id}
+                        className="card card-side bg-base-300 shadow-md mb-6 w-full mx-auto"
                     >
-                    <figure className="p-6">
+                    <figure className="p-4 md:p-6 shrink-0">
                         <img
                         src={connection.photoUrl}
                         alt="user"

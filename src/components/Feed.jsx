@@ -49,7 +49,7 @@ const Feed = () => {
         Connect with developers and grow your network.
       </p>
 
-      <div className="flex flex-col items-center gap-6 pb-24">
+      <div className="flex flex-col items-center gap-6 mx-2 pb-24">
         {feed?.map((user) => (
           <UserCard key={user._id} user={user} />
         ))}

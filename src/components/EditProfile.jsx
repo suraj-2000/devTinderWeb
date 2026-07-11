@@ -48,8 +48,8 @@ const EditProfile = ({userData})=> {
         <span>Profile updated successfully.</span>
     </div>
     </div>}
-    <div className="flex justify-center items-start gap-10 my-10 px-4 flex-wrap">
-  <div className="card bg-base-300 w-[450px] shadow-2xl border border-base-content/10">
+    <div className="flex justify-center items-start gap-10 my-10 px-4 flex-wrap overflow-x-hidden w-full">
+  <div className="card bg-base-300 w-full max-w-[450px] h-[550px] shadow-2xl border border-base-content/10">
     <div className="card-body">
       <h2 className="card-title justify-center text-2xl font-bold mb-4">
         Edit Profile
