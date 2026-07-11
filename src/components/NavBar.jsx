@@ -28,6 +28,17 @@ const NavBar = () => {
       </div>
       <div className="flex gap-2">
         {user && <p className="font-medium self-center">Welcome, {user.firstName} </p> }
+         {user && user.isPremium && (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="#1D9BF0"
+        className="w-5 h-5"
+      >
+        <path d="M12 2l2.09 2.26 3.07-.43.43 3.07L20 9l-2.41 2.1.43 3.07-3.07.43L12 17l-2.95-2.4-3.07-.43.43-3.07L4 9l2.41-2.1-.43-3.07 3.07.43L12 2zm-1 13l6-6-1.41-1.41L11 12.17l-2.59-2.58L7 11l4 4z"/>
+      </svg>
+    )}
+
         <div className="dropdown dropdown-end mx-5">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
             {!user && (
