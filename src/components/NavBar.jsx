@@ -21,39 +21,47 @@ const NavBar = () => {
     }
     const guestUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzt9giWjwNCackreb_tWA5drICRqkjo5ggAiSJ4ToZ1A&s"
     return (
-    <>
-    <div className="navbar w-full bg-base-300 shadow-sm">
-      <div className="flex-1">
-        <Link to="/" className="btn btn-ghost text-xl">💻DevTinder</Link>
+  <>
+    <div className="navbar w-full flex-nowrap bg-base-300 shadow-sm">
+      <div className="flex-1 min-w-0">
+        <Link to="/" className="btn btn-ghost text-xl whitespace-nowrap">
+          💻 DevTinder
+        </Link>
       </div>
-      <div className="flex gap-2">
-        {user && <p className="font-medium self-center">Welcome, {user.firstName} </p> }
-         {user && user.isPremium && (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="#1D9BF0"
-        className="w-5 h-5"
-      >
-        <path d="M12 2l2.09 2.26 3.07-.43.43 3.07L20 9l-2.41 2.1.43 3.07-3.07.43L12 17l-2.95-2.4-3.07-.43.43-3.07L4 9l2.41-2.1-.43-3.07 3.07.43L12 2zm-1 13l6-6-1.41-1.41L11 12.17l-2.59-2.58L7 11l4 4z"/>
-      </svg>
-    )}
+
+      <div className="flex items-center gap-2">
+        {user && (
+          <div className="flex items-center whitespace-nowrap">
+            <p className="font-medium">Welcome, {user.firstName}</p>
+
+            {user.isPremium && (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="#1D9BF0"
+                className="w-5 h-5 ml-1"
+              >
+                <path d="M12 2l2.09 2.26 3.07-.43.43 3.07L20 9l-2.41 2.1.43 3.07-3.07.43L12 17l-2.95-2.4-3.07-.43.43-3.07L4 9l2.41-2.1-.43-3.07 3.07.43L12 2zm-1 13l6-6-1.41-1.41L11 12.17l-2.59-2.58L7 11l4 4z" />
+              </svg>
+            )}
+          </div>
+        )}
 
         <div className="dropdown dropdown-end ml-2">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
             {!user && (
-            <div className="w-10 rounded-full">
-              <img
-                alt="User"
-                src={guestUrl} />
-            </div> )}
-           {user && (
-            <div className="w-10 rounded-full">
-              <img
-                alt="User"
-                src={user.photoUrl} />
-            </div> )}
+              <div className="w-10 rounded-full">
+                <img alt="User" src={guestUrl} />
+              </div>
+            )}
+
+            {user && (
+              <div className="w-10 rounded-full">
+                <img alt="User" src={user.photoUrl} />
+              </div>
+            )}
           </div>
+
           <ul
             tabIndex={0}
             onClick={() => document.activeElement?.blur()}
@@ -65,22 +73,33 @@ const NavBar = () => {
                 <span className="badge">New</span>
               </Link>
             </li>
+
             <li>
-            <Link to="/connections" className="justify-between">Connection</Link>
+              <Link to="/connections" className="justify-between">
+                Connection
+              </Link>
             </li>
+
             <li>
-            <Link to="/requests" className="justify-between">Request</Link>
+              <Link to="/requests" className="justify-between">
+                Request
+              </Link>
             </li>
+
             <li>
-            <Link to="/premium" className="justify-between">Premium</Link>
+              <Link to="/premium" className="justify-between">
+                Premium
+              </Link>
             </li>
-            <li><a onClick={handleLogout}>Logout</a></li>
+
+            <li>
+              <a onClick={handleLogout}>Logout</a>
+            </li>
           </ul>
         </div>
       </div>
     </div>
-
-    </>
-    );
+  </>
+);
 }
 export default NavBar;
