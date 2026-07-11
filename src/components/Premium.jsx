@@ -8,7 +8,7 @@ const Premium = () => {
   useEffect(()=> {
     verifyPremiumUser();
   },[]);
-  
+
   const verifyPremiumUser = async () => {
     const res = await axios.get(BASE_URL+ "/premium/verify",{withCredentials:true});
     if(res.data.isPremium) {
@@ -51,7 +51,14 @@ const Premium = () => {
 
   return (
     <>
-    {isUserPremium ? "You're already a premium user": <div>
+    {isUserPremium ? <div className="flex flex-col items-center justify-center text-center py-10">
+        <p className="text-secondary font-semibold">
+        Premium Membership Active
+        </p>
+        <p className="text-primary">
+        Your account already has Premium access.
+        </p>
+  </div>: <div>
       <div className="text-center mt-10 px-4">
         <h1 className="text-4xl font-bold">
           Upgrade to Premium 🚀
