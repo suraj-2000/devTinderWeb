@@ -36,13 +36,13 @@ const Connections = () => {
                 return (
                     <div
                     key={connection._id}
-                    className="card card-side bg-base-300 shadow-md mb-6 mx-auto max-w-2xl"
+                    className="card card-side bg-base-300 shadow-md mb-6 mx-4 max-w-2xl"
                     >
-                    <figure className="p-4">
+                    <figure className="p-6">
                         <img
                         src={connection.photoUrl}
                         alt="user"
-                        className="w-24 h-24 rounded-full object-cover"
+                        className="w-20 h-20 rounded-full object-cover"
                         />
                     </figure>
 
