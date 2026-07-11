@@ -22,7 +22,7 @@ const NavBar = () => {
     const guestUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzt9giWjwNCackreb_tWA5drICRqkjo5ggAiSJ4ToZ1A&s"
     return (
     <>
-    <div className="navbar bg-base-300 shadow-sm">
+    <div className="navbar w-full bg-base-300 shadow-sm">
       <div className="flex-1">
         <Link to="/" className="btn btn-ghost text-xl">💻DevTinder</Link>
       </div>
@@ -39,7 +39,7 @@ const NavBar = () => {
       </svg>
     )}
 
-        <div className="dropdown dropdown-end mx-5">
+        <div className="dropdown dropdown-end ml-2">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
             {!user && (
             <div className="w-10 rounded-full">
