@@ -23,13 +23,13 @@ const NavBar = () => {
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzt9giWjwNCackreb_tWA5drICRqkjo5ggAiSJ4ToZ1A&s";
 
   return (
-    <div className="navbar w-full overflow-x-hidden bg-base-300 shadow-sm px-2">
+    <div className="navbar w-full bg-base-300 shadow-sm px-2">
       <div className="flex-1 min-w-0">
         <Link
           to="/"
-          className="btn btn-ghost text-xl px-1 truncate"
+          className="btn btn-ghost text-xl px-2 whitespace-nowrap"
         >
-          💻DevTinder
+          💻 DevTinder
         </Link>
       </div>
 
@@ -73,25 +73,26 @@ const NavBar = () => {
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow"
           >
             <li>
-              <Link to="/profile">
+              <Link to="/profile" className="justify-between">
                 Profile
+                <span className="badge">New</span>
               </Link>
             </li>
 
             <li>
-              <Link to="/connections">
+              <Link to="/connections" className="justify-between">
                 Connection
               </Link>
             </li>
 
             <li>
-              <Link to="/requests">
+              <Link to="/requests" className="justify-between">
                 Request
               </Link>
             </li>
 
             <li>
-              <Link to="/premium">
+              <Link to="/premium" className="justify-between">
                 Premium
               </Link>
             </li>
