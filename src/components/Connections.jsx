@@ -3,6 +3,7 @@ import { BASE_URL } from "../utils/constants";
 import { useDispatch, useSelector } from "react-redux";
 import { addConnection } from "../utils/connectionsSlice";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 
 const Connections = () => {
@@ -37,23 +38,36 @@ const Connections = () => {
                     <div
                         key={connection._id}
                         className="card card-side bg-base-300 shadow-md mb-6 w-full mx-auto"
-                    >
-                    <figure className="p-4 md:p-6 shrink-0">
-                        <img
-                        src={connection.photoUrl}
-                        alt="user"
-                        className="w-20 h-20 rounded-full object-cover"
-                        />
-                    </figure>
+                        >
+                        <figure className="p-4 md:p-6 shrink-0">
+                            <img
+                            src={connection.photoUrl}
+                            alt="user"
+                            className="w-20 h-20 rounded-full object-cover"
+                            />
+                        </figure>
 
-                    <div className="card-body">
-                        <h2 className="card-title">
-                        {connection.firstName + " " + connection.lastName}
-                        </h2>
-                        {connection.about && <p>{connection.about}</p>}
-                        {connection.age && <p>Age: {connection.age}</p>}
-                        {connection.gender && <p>{connection.gender}</p>}
-                    </div>
+                        <div className="card-body flex flex-row justify-between items-center">
+                            <div>
+                            <h2 className="card-title">
+                                {connection.firstName + " " + connection.lastName}
+                            </h2>
+                            {connection.about && <p>{connection.about}</p>}
+                            {connection.age && <p>Age: {connection.age}</p>}
+                            {connection.gender && <p>{connection.gender}</p>}
+                            </div>
+
+                            <Link
+                                to={"/chat/" + connection._id}
+                                state={{
+                                    firstName: connection.firstName,
+                                    lastName: connection.lastName,
+                                    photoUrl: connection.photoUrl
+                                }}
+                            >
+                                <button className="btn btn-primary">Chat</button>
+                            </Link>
+                        </div>
                     </div>
                 );
             })}
